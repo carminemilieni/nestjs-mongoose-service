@@ -27,7 +27,7 @@ export class RequestQueryDto {
   })
   page: number = 1;
   @Type(() => Number)
-  @Min(0)
+  @Min(1)
   @ApiPropertyOptional({
     description: 'Number of items per page',
     example: 10,
