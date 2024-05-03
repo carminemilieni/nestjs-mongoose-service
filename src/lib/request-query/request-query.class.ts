@@ -21,14 +21,13 @@ export class RequestQueryClass<
     ctx: IRequestQueryCtx<R> = {},
   ): Promise<IRequestQueryResponse<R>> {
     const { query } = ctx;
-    ctx.data = await this._model.create(data);
-    if (ctx.data._id) {
-      ctx.data = await this.findOne(ctx.data._id.toString(), {
+    const res = await this._model.create(data);
+    ctx.data = (
+      await this.findOne(res._id.toString(), {
         query,
-      });
-      return this._responseHandling<R>(ctx);
-    }
-    return this._responseHandling<R>(ctx.data);
+      })
+    ).data;
+    return this._responseHandling<R>(ctx);
   }
 
   async deleteOne<R = T>(
@@ -36,15 +35,16 @@ export class RequestQueryClass<
     ctx: IRequestQueryCtx<R> = {},
   ): Promise<IRequestQueryResponse<R>> {
     const { query } = ctx;
-    const doc = (await this._model
-      .findOneAndDelete({ _id: id } as any)
+    const q = this._model
+      .findOneAndDelete(query.filter)
       .populate(query.populate)
-      .select(query.select)
-      .exec()) as R;
-    if (!doc) {
+      .select(query.select);
+    const res = (await q.exec()) as R[];
+    if (!res) {
       throw new NotFoundException();
     }
-    return this._responseHandling<R>(doc);
+    ctx.data = res;
+    return this._responseHandling<R>(ctx);
   }
 
   async findMany<R = T>(
