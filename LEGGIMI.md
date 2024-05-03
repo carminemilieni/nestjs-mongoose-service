@@ -93,6 +93,7 @@ export class ExampleController {
 ```
 
 Nel tuo entity file (facoltativo)
+se vuoi usare l'entità ricorda di aggiungere `@UseInterceptors(ClassSerializerInterceptor)` prima del metodo controller.
 
 ```ts
 // ...
