@@ -6,26 +6,26 @@
 
 # nestjs-mongoose-service
 
-⭐️ Star this project on GitHub: it motivates me a lot!
+⭐️ Aggiungi una stella su GitHub: mi motiva molto!
 
-> This project was born from the absence of libraries that work decently with Mongoose.
-> It's a NestJS library that provides classes and methods for easy CRUD operations with Mongoose models.
+> Questo progetto nasce dall'assenza di librerie che lavorano in modo decente con Mongoose.
+> È una libreria NestJS che fornisce classi e metodi per operazioni CRUD facili con modelli Mongoose.
 >
 >
-> With this project, you can accept complex queries, paginate results, and select fields, all fully
-> compatible with OpenAPI and Swagger generation.
+> Con questo progetto potrai accettare query complesse, paginare i risultati e selezionare i campi, tutto pienamente
+> compatibile con OpenAPI e la generazione dello Swagger.
 
-## Prerequisites
+## Pre-requisiti
 
-This project was developed
-using NodeJS v20.9.0, NPM v10.1.0 or Yarn v1.22.22 and NestJS v10.0.0.
+Questo progetto è stato sviluppato
+utilizzando NodeJS v20.9.0, NPM v10.1.0 o Yarn v1.22.22 e NestJS v10.0.0.
 
 - [Node](http://nodejs.org/) (v20.9.0)
 - [NPM](https://npmjs.org/) (v10.1.0)
 - [YARN](https://yarnpkg.com/) (v1.22.22)
 - [NestJS](https://nestjs.com/) (v10.0.0)
 
-Project dependencies:
+Dipendenze di progetto:
 
 - @nestjs/common: ^10.0.0
 - @nestjs/config: ^3.2.0
@@ -37,37 +37,37 @@ Project dependencies:
 - class-validator: ^0.14.1
 - mongoose: ^8.2.3
 
-I do not guarantee backward compatibility with previous versions of NodeJS and NPM.
-Any requests are welcome.
+Non garantisco la retro-compatibilità con versioni precedenti di NodeJS e NPM.
+Eventuali richieste sono ben accette.
 
-## Summary
+## Sommario
 
-- [Installation](#installation)
-- [Usage](#usage)
-    - [Create Controller, Service and Entity](#create-controller-service-and-entity)
-    - [In your service](#in-your-service)
-- [Apologies](#apologies)
-- [License](#license)
+- [Installazione](#installazione)
+- [Utilizzo](#utilizzo)
+    - [Creare Controller, Service ed Entity](#creare-controller-service-ed-entity)
+    - [Nel tuo service](#nel-tuo-service)
+- [Scuse](#scuse)
+- [Licenza](#licenza)
 
-## Installation
+## Installazione
 
-**BEFORE INSTALLING:** please read the [prerequisites](#prerequisites)
+**PRIMA DI INSTALLARE:** per favore leggi i [pre-requisiti](#pre-requisiti)
 
-Depending on the package manager you prefer, you can install the library with npm or yarn.
+A seconda del package manager che preferisci, puoi installare la libreria con npm o yarn.
 
 ```shell
-$ npm install -S nestjs-mongoose-service
+npm install -S nestjs-mongoose-service
 ```
 
-Or if you prefer to use Yarn:
+Oppure se preferisci usare Yarn:
 
 ```shell
 yarn add nestjs-mongoose-service
 ```
 
-## Usage
+## Utilizzo
 
-### Create Controller, Service and Entity
+### Creare Controller, Service ed Entity
 
 Controller
 
@@ -92,7 +92,7 @@ export class ExampleController {
 // example.controller.ts
 ```
 
-In your entity file (optional)
+Nel tuo entity file (facoltativo)
 
 ```ts
 // ...
@@ -114,7 +114,7 @@ export class ExampleEntity {
 
 ```
 
-### In your service
+### Nel tuo service
 
 ```ts
 // ...
@@ -157,14 +157,14 @@ export class ExampleService {
 }
 ```
 
-### Apologies
+### Scuse
 
-The documentation is under development and incomplete, I'm sure that by looking at the swagger and source files you will
-be able to understand how to use the library.
-If you need help, please open an issue.
-When I realize that the library will have a following, I will commit to completing the documentation.
+La documentazione è in via di sviluppo e incompleta, sono sicuro che guardando lo swagger e i file sorgente
+sarai in grado di capire come utilizzare la libreria.
+Se hai bisogno di aiuto, per favore apri una issue.
+Quando mi renderò conto che la libreria avrà un seguito, mi impegnerò a completare la documentazione.
 
-## License
+## Licenza
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
 This work is distributed under a License <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
