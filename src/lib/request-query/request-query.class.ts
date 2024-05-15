@@ -5,10 +5,13 @@ import { NotFoundException } from '@nestjs/common';
 export class RequestQueryClass<
   T extends HydratedDocument<any> = HydratedDocument<any>,
 > {
-  constructor(private _model: Model<T>) {}
+  constructor(
+    private _model: Model<T>,
+    private _idFieldKey = '_id',
+  ) {}
 
-  static create<T>(model: Model<T>): RequestQueryClass<T> {
-    return new RequestQueryClass<T>(model);
+  static create<T>(model: Model<T>, idFieldKey = '_id'): RequestQueryClass<T> {
+    return new RequestQueryClass<T>(model, idFieldKey);
   }
 
   async count(ctx: IRequestQueryCtx<any>): Promise<number> {
@@ -23,7 +26,7 @@ export class RequestQueryClass<
     const { query } = ctx;
     const res = await this._model.create(data);
     ctx.data = (
-      await this.findOne(res._id.toString(), {
+      await this.findOne(res[this._idFieldKey].toString(), {
         query,
       })
     ).data;
@@ -35,6 +38,7 @@ export class RequestQueryClass<
     ctx: IRequestQueryCtx<R> = {},
   ): Promise<IRequestQueryResponse<R>> {
     const { query } = ctx;
+    query.filter = { ...query.filter, [this._idFieldKey]: id };
     const q = this._model
       .findOneAndDelete(query.filter)
       .populate(query.populate)
