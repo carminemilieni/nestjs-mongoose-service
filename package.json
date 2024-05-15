@@ -1,6 +1,6 @@
 {
   "name": "nestjs-mongoose-service",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": "https://github.com/carminemilieni/nestjs-mongoose-service",
   "author": "Carmine Milieni - NinjaCoding <carmine.milieni@gmail.com>",
   "license": "MIT",
