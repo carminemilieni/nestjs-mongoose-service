@@ -1,7 +1,8 @@
 {
   "name": "nestjs-mongoose-service",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "https://github.com/carminemilieni/nestjs-mongoose-service",
+  "description": "NestJS library that provides classes and methods for easy CRUD operations with Mongoose models. Accept complex queries, paginate results, and select fields, all fully compatible with OpenAPI and Swagger generation",
   "author": "Carmine Milieni - NinjaCoding <carmine.milieni@gmail.com>",
   "license": "MIT",
   "private": false,
